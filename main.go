@@ -1,8 +1,5 @@
 package main
 
-
-
-
 import "fmt"
 
 func f(n int) {
