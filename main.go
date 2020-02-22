@@ -19,7 +19,6 @@ func b(n int) {
     }
 }
 
-
 func main() {
     go a(5)
     var input string
