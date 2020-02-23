@@ -1,9 +1,24 @@
 package demo
 
-func Average(xs []float64) float64 {
-    total := float64(0)
-    for _, x := range xs {
-        total += x
+import(
+    "fmt"
+    "time"
+)
+func Pinger(c chan string) {
+    for i := 0; ; i++ {
+        c <- "ping"
     }
-    return total / float64(len(xs))
+}
+
+func Ponger(c chan string) {
+    for i := 0; ; i++ {
+        c <- "pong"
+    }
+}
+func Printer(c chan string) {
+    for {
+        msg := <- c
+        fmt.Println(msg)
+        time.Sleep(time.Second * 1)
+    }
 }
